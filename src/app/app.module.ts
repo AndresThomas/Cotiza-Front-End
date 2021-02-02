@@ -11,6 +11,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MyDialogComponent } from './my-dialog/my-dialog.component';
 import { MatCheckboxModule } from '@angular/material/checkbox/';
+import { CookieService } from 'ngx-cookie-service';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox/';
     MatCheckboxModule
   ],
   entryComponents: [MyDialogComponent],
-  providers: [],
+  providers: [CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

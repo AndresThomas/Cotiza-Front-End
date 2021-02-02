@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { MatDialogRef } from "@angular/material/dialog";
+import { Router } from '@angular/router';
+import { CookieService } from 'ngx-cookie-service';
 import { MyDialogComponent } from '../my-dialog/my-dialog.component';
 import { RequestServiceService } from '../request-service.service';
 
@@ -16,8 +18,17 @@ export class DashboardComponent implements OnInit {
 
   constructor(
     public matDialog: MatDialog,
-    private request: RequestServiceService
+    private request: RequestServiceService,
+    private cookieService: CookieService,
+    private router: Router,
   ) { }
+
+  validation(){
+    if(!this.cookieService.check('cookieLogin')){
+      this.router.navigate(["/"]);   
+    }
+  }
+
 
   extractData(){
     this.request.getProducts().subscribe(
@@ -45,6 +56,7 @@ export class DashboardComponent implements OnInit {
     })
   }
   ngOnInit(): void {
+    this.validation();
     this.extractData();
   }
 

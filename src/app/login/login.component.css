@@ -22,7 +22,11 @@ body {
     margin-right: auto;
     text-align: center;
 }
-
+.error{
+  text-align: center;
+  color: white;
+  font-size: 130%;
+}
 .card {
   height: 400px;
   margin-top: auto;

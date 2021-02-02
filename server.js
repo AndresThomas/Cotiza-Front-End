@@ -7,7 +7,7 @@ const app = express();
 app.use(express.static('./dist/cotiza-app'));
 
 app.get('/*', (req, res) =>
-    res.sendFile('index.html', {root: 'dist/cotiza-app/'}),
+    res.sendFile(__dirname+'/dist/cotiza-app/app.html'),
 );
 
 // Start the app by listening on the default Heroku port

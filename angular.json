@@ -32,9 +32,7 @@
               "src/styles.css"
             ],
             "scripts": [
-              "./node_modules/bootstrap/dist/js/bootstrap",
-              "node_modules/jquery/dist/jquery.min.js",
-              "./node_modules/popper.js/dist/umd/popper.js"
+              "./node_modules/bootstrap/dist/js/bootstrap"
             ]
           },
           "configurations": {

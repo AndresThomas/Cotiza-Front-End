@@ -14,11 +14,18 @@ body {
   width: 100%;
 }
 .container {
-  height: 90vh;
+  height: 91vh;
   align-content: center;
-  margin-top: -50px;
+  margin-top: auto;
+  margin-bottom: auto;
 }
-
+.options{
+  width: 65%;
+}
+.o{
+  margin-left: auto;
+  margin-right: initial;
+}
 .myBtn {
   margin-right: auto;
   margin-left: auto;

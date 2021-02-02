@@ -14,7 +14,7 @@ import { RequestServiceService } from '../request-service.service';
 export class DashboardComponent implements OnInit {
 
   results: any ;
-  
+  name: string = localStorage.getItem("name") || "";
 
   constructor(
     public matDialog: MatDialog,

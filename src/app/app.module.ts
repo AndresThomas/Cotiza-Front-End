@@ -12,6 +12,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MyDialogComponent } from './my-dialog/my-dialog.component';
 import { MatCheckboxModule } from '@angular/material/checkbox/';
 import { CookieService } from 'ngx-cookie-service';
+import { AlmacenComponent } from './almacen/almacen.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,8 @@ import { CookieService } from 'ngx-cookie-service';
     LoginComponent,
     DashboardComponent,
     RegisterComponent,
-    MyDialogComponent
+    MyDialogComponent,
+    AlmacenComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +31,8 @@ import { CookieService } from 'ngx-cookie-service';
     HttpClientModule, 
     BrowserAnimationsModule,
     MatDialogModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    NgbModule
   ],
   entryComponents: [MyDialogComponent],
   providers: [CookieService],

@@ -1,0 +1,31 @@
+<div class="container">
+  <h2 mat-dialog-title>Buscar</h2>
+</div>
+<div class="listado" mat-dialog-content>
+  <table class="table">
+    <tr>
+      <th class="tableHeader">Cantidad disponible</th>
+      <th class="tableHeader">Folio</th>
+      <th class="tableHeader">Descripcion</th>
+      <th class="tableHeader">Precio Unitario</th>
+      <th class="tableHeader">Seleccionar</th>
+    </tr>
+
+
+    <tr *ngFor='let productIterator of data'>
+      <td class="tableHeader">{{ productIterator.cantidad }}</td>
+      <td>{{ productIterator.folio }}</td>
+      <td>{{ productIterator.descripcion }}</td>
+      <td class="tableHeader">${{ productIterator.costo }}</td>
+      <td class="tableHeader" mat-checkbox></td>
+    </tr>
+  </table>
+
+
+</div>
+
+<div mat-dialog-actions>
+  <button class="btn btn-danger myBtn" [mat-dialog-close]="true">Cerrar</button>
+  <button class="btn btn-primary myBtn" [mat-dialog-close]="true">Buscar</button>
+  <button class="btn btn-success myBtn" [mat-dialog-close]="true">Aceptar</button>
+</div>

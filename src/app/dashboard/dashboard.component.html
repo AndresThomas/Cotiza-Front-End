@@ -6,8 +6,7 @@
 
 <head>
     <title>Home Page</title>
-    <!--Made with love by Mutiullah Samim -->
-
+    
     <!--Bootsrap 4 CDN-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
@@ -15,14 +14,14 @@
     <!--Fontawesome CDN-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
         integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-
+    
     <!--Custom styles-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
     
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="#">Cotiza App</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -30,34 +29,32 @@
       
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" routerLink="dashboard">Cotizar <span class="sr-only">(current)</span></a>
+            <li class="nav-item ">
+              <a class="nav-link" routerLink="dashboard">Cotizar </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" routerLink="almacen">Almacen</a>
             </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle"  id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <li ngbDropdown class="nav-item dropdown">
+              <a ngbDropdownToggle class="nav-link dropdown-toggle"  id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Acciones rapidas
               </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" >Action</a>
-                <a class="dropdown-item" >Another action</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" >Something else here</a>
+              <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a ngbDropdownItem class="dropdown-item" >Action</a>
+                <a ngbDropdownItem class="dropdown-item" >Another action</a>
               </div>
             </li>
           </ul>
           <ul class="navbar-nav mr-auto options">
-            <li class="nav-item dropdown o">
-                <a class="nav-link dropdown-toggle o"  id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <li ngbDropdown class="nav-item dropdown o">
+                <a ngbDropdownToggle class="nav-link dropdown-toggle o"  id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   {{name}}
                 </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" >Action</a>
-                  <a class="dropdown-item" >Another action</a>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" >Something else here</a>
+                <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a ngbDropdownItem class="dropdown-item" >Cerrar sesion</a>
+                  <a ngbDropdownItem class="dropdown-item" >Configuraciones</a>
+                  <a ngbDropdownItem class="dropdown-item" >Action</a>
+                  
                 </div>
               </li>
           </ul>

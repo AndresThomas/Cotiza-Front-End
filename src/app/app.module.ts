@@ -14,6 +14,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox/';
 import { CookieService } from 'ngx-cookie-service';
 import { AlmacenComponent } from './almacen/almacen.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ProductDialogComponent } from './product-dialog/product-dialog.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     DashboardComponent,
     RegisterComponent,
     MyDialogComponent,
-    AlmacenComponent
+    AlmacenComponent,
+    ProductDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +36,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     MatCheckboxModule,
     NgbModule
   ],
-  entryComponents: [MyDialogComponent],
+  entryComponents: [MyDialogComponent,ProductDialogComponent],
   providers: [CookieService],
   bootstrap: [AppComponent]
 })

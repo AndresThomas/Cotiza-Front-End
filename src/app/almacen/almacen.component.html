@@ -1,1 +1,94 @@
-<p>almacen works!</p>
+<!DOCTYPE html>
+<html>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<head>
+    <title>Almacen</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Cotiza App</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item ">
+              <a class="nav-link" routerLink="../dashboard">Cotizar </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="../almacen">Almacen</a>
+            </li>
+            <li ngbDropdown class="nav-item dropdown">
+              <a ngbDropdownToggle class="nav-link dropdown-toggle"  id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Acciones rapidas
+              </a>
+              <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a ngbDropdownItem class="dropdown-item" >Action</a>
+                <a ngbDropdownItem class="dropdown-item" >Another action</a>
+              </div>
+            </li>
+          </ul>
+          <ul class="navbar-nav mr-auto options">
+            <li ngbDropdown class="nav-item dropdown o">
+                <a ngbDropdownToggle class="nav-link dropdown-toggle o"  id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  andres
+                </a>
+                <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a ngbDropdownItem class="dropdown-item" >Cerrar sesion</a>
+                  <a ngbDropdownItem class="dropdown-item" >Configuraciones</a>
+                  <a ngbDropdownItem class="dropdown-item" >Action</a>
+                  
+                </div>
+              </li>
+          </ul>
+        </div>
+      </nav>
+
+    <div class="container">
+        <div class="d-flex justify-content-center h-100">
+            <div class="card">
+                <div class="card-header">
+                    <table class="tabla">
+                        <th class="columna">
+                            <h3>Cantidad</h3>
+                        </th>
+                        <th class="columna">
+                            <h3>Folio</h3>
+                        </th>
+                        <th class="columna">
+                            <h3>Descripcion</h3>
+                        </th>
+                        <th class="columna">
+                            <h3>Precio U.</h3>
+                        </th>
+                        <th class="columna">
+                            <h3>Total</h3>
+                        </th>
+                    </table>
+
+                </div>
+                <div class="card-body">
+                    <table>
+                        <!-- logica de agregacion de productos -->
+                        <!-- se crea un tr -> table raw o fila y dentro un td 
+                        table data o columna -->
+                    </table>
+
+
+                </div>
+                <div class="card-footer">
+                    <div class="d-flex justify-content-center links">
+                        <button type="button" class="btn btn-primary myBtn" (click)="openDialog()" >Agregar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

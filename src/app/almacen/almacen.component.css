@@ -31,9 +31,19 @@ body {
   margin-left: auto;
   width: 50vh;
 }
-.tabla{
+.table {
+  font-family: arial, sans-serif;
   border-collapse: collapse;
   width: 100%;
+}
+.bodyT {
+  border: 1px solid #dddddd;
+  padding: 5px;
+  text-align: center;
+  color: white;  
+}
+.cantidad{
+  width: 10% ;
 }
 .columna{
   padding: 8px;
@@ -80,6 +90,12 @@ h3 {
   color: white;
   align-items: center;
 }
+.card-body {
+  color: white;
+  align-items: center;
+  overflow: hidden;
+  overflow-y: scroll;
+}
 
 .input-group-prepend span {
   width: 50px;
@@ -110,10 +126,6 @@ input:focus {
   width: 100px;
 }
 
-.login_btn:hover {
-  color: black;
-  background-color: white;
-}
 
 .links {
   color: white;

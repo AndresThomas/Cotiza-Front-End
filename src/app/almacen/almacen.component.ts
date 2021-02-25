@@ -20,6 +20,7 @@ export class AlmacenComponent implements OnInit {
     private router: Router,
   ) { }
 
+  results: any ;
   validation(){
     if(!this.cookieService.check('cookieLogin')){
       this.router.navigate(["/"]);   
@@ -36,15 +37,29 @@ export class AlmacenComponent implements OnInit {
     
     dialogRef.afterClosed().subscribe(result => {
       console.log(result);
+      this.extractData();
     })
   }
 
   closeDialog(){
     this.matDialog.closeAll();
+    this.extractData();
+  }
+
+  extractData(){
+    this.request.getProducts().subscribe(
+      (results) =>{
+        this.results = results;
+      },
+      (error)=>{
+        console.log(error);
+      }
+    )
   }
 
   ngOnInit(): void {
     this.validation();
+    this.extractData();
   }
 
 }

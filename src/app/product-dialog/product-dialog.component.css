@@ -24,6 +24,13 @@ input{
     margin: 0 auto;
     padding: 20px;
   }
+.btnClose{
+  margin-left: auto;
+  margin-right: auto;
+}
+.divClose{
+  width: 100%;
+}
   
   .file-upload-btn {
     width: 100%;

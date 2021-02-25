@@ -1,18 +1,25 @@
-<button type="button" class="close" aria-label="Close">
-    <span aria-hidden="true">&times;</span>
-  </button>
+<mat-dialog-actions>
+<div class="divClose">
+    <button class="btnClose" mat-button mat-dialog-close class="close" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<mat-dialog-actions>
+
+
+
 
 <div class="container">
     <div class="formProduct">
         <form [formGroup]="productForm" (ngSubmit)="onSubmit(productForm.value)">
             <h3>Nombre producto</h3>
-            <input type="text" placeholder="caja0010" formControlName="nombre">
+            <input type="text" placeholder="caja0010" formControlName="folio">
             <h3>Cantidad producto</h3>
             <input type="number" placeholder="0" formControlName="cantidad">
             <h3>Descripcion producto</h3>
             <input type="text" placeholder="descripcion" formControlName="descripcion">
             <h3>Precio producto</h3>
-            <input type="number" placeholder="$0.00" formControlName="precio">
+            <input type="number" placeholder="$0.00" formControlName="costo">
             <input type="submit" value="Aceptar" class="btn btn-primary myBtn">
 
         </form>

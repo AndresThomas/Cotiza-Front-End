@@ -45,7 +45,7 @@ export class DashboardComponent implements OnInit {
 
   
   openDialog() {
-    
+    this.extractData();    
     const dialogRef = this.matDialog.open(MyDialogComponent, {
       width: '70%',
       height: '70%',

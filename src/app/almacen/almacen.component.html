@@ -52,32 +52,32 @@
     <div class="container">
         <div class="d-flex justify-content-center h-100">
             <div class="card">
-                <div class="card-header">
-                    <table class="tabla">
-                        <th class="columna">
-                            <h3>Cantidad</h3>
-                        </th>
-                        <th class="columna">
-                            <h3>Folio</h3>
-                        </th>
-                        <th class="columna">
-                            <h3>Descripcion</h3>
-                        </th>
-                        <th class="columna">
-                            <h3>Precio U.</h3>
-                        </th>
-                        <th class="columna">
-                            <h3>Total</h3>
-                        </th>
-                    </table>
-
-                </div>
                 <div class="card-body">
-                    <table>
-                        <!-- logica de agregacion de productos -->
-                        <!-- se crea un tr -> table raw o fila y dentro un td 
-                        table data o columna -->
-                    </table>
+                  <table class="table">
+                    <th class="cantidad columna bodyT">
+                      <h3>Cantidad</h3>
+                  </th>
+                  <th class="columna bodyT">
+                      <h3>Folio</h3>
+                  </th>
+                  <th class=" columna bodyT">
+                      <h3>Descripcion</h3>
+                  </th>
+                  <th class="cantidad columna bodyT">
+                      <h3>Precio</h3>
+                  </th>
+                  <th class="columna bodyT">
+                    
+                </th>
+
+                    <tr *ngFor='let productIterator of results'>
+                      <td class=" bodyT">{{ productIterator.cantidad }}</td>
+                      <td class=" bodyT "  >{{ productIterator.folio }}</td>
+                      <td class=" bodyT" >{{ productIterator.descripcion }}</td>
+                      <td class="bodyT">${{ productIterator.costo }}</td>
+                      <td class=" bodyT" mat-checkbox></td>
+                    </tr>
+                </table>
 
 
                 </div>

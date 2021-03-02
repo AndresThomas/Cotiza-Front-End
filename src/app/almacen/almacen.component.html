@@ -71,11 +71,11 @@
                 </th>
 
                     <tr *ngFor='let productIterator of results'>
-                      <td class=" bodyT">{{ productIterator.cantidad }}</td>
-                      <td class=" bodyT "  >{{ productIterator.folio }}</td>
-                      <td class=" bodyT" >{{ productIterator.descripcion }}</td>
+                      <td class="bodyT">{{ productIterator.cantidad }}</td>
+                      <td class="bodyT "  >{{ productIterator.folio }}</td>
+                      <td class="bodyT" >{{ productIterator.descripcion }}</td>
                       <td class="bodyT">${{ productIterator.costo }}</td>
-                      <td class=" bodyT" mat-checkbox></td>
+                      <td class="bodyT"><button class="btn btn-info" (click)="openProduct(productIterator)" >abrir</button></td>
                     </tr>
                 </table>
 
@@ -83,7 +83,7 @@
                 </div>
                 <div class="card-footer">
                     <div class="d-flex justify-content-center links">
-                        <button type="button" class="btn btn-primary myBtn" (click)="openDialog()" >Agregar</button>
+                        <button type="button" class="btn btn-primary myBtn" (click)="addProduct()" >Agregar</button>
                     </div>
                 </div>
             </div>

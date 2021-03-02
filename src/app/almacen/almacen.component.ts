@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
-import { MyDialogComponent } from '../my-dialog/my-dialog.component';
+import { ProductDetailDialogComponent } from '../product-detail-dialog/product-detail-dialog.component';
 import { ProductDialogComponent } from '../product-dialog/product-dialog.component';
 import { RequestServiceService } from '../request-service.service';
 
@@ -20,6 +20,8 @@ export class AlmacenComponent implements OnInit {
     private router: Router,
   ) { }
 
+  
+
   results: any ;
   validation(){
     if(!this.cookieService.check('cookieLogin')){
@@ -27,23 +29,29 @@ export class AlmacenComponent implements OnInit {
     }
   }
 
-  openDialog() {
+  openProduct(product:any){
+    const dialogRef = this.matDialog.open(ProductDetailDialogComponent,{
+      width: '40%',
+      height:'90%',
+      data: product
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(result);
+      this.extractData();
+    });
     
+  }
+
+  addProduct() {
     const dialogRef = this.matDialog.open(ProductDialogComponent, {
       width: '70%',
       height: '70%',
-      
     });
     
     dialogRef.afterClosed().subscribe(result => {
       console.log(result);
       this.extractData();
-    })
-  }
-
-  closeDialog(){
-    this.matDialog.closeAll();
-    this.extractData();
+    });
   }
 
   extractData(){
@@ -53,6 +61,7 @@ export class AlmacenComponent implements OnInit {
       },
       (error)=>{
         console.log(error);
+        alert("Ha ocurrido un error, contacte al tecnico por favor");
       }
     )
   }

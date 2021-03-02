@@ -1,0 +1,52 @@
+.container {
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+  }
+  .divClose{
+    width: 100%;
+  }
+  .table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  .in{
+    width: 75%;
+  }
+  td,th {
+    border: 1px solid #dddddd;
+    padding: 8px;
+    text-align: center;
+  }  
+  
+  .tableHeader {
+    text-align: center;
+    width: 10%;
+    height: 10%;
+  }
+  
+  .listado {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    height: 75%;
+  }
+  
+  .myBtn {
+    margin-right: auto;
+    margin-left: auto;
+    width: 35vh;
+  }
+  
+  .title{
+      background-color: black;
+      text-align: center;
+  }
+  
+  h2 {
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+  }
+  

@@ -15,6 +15,7 @@ import { CookieService } from 'ngx-cookie-service';
 import { AlmacenComponent } from './almacen/almacen.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ProductDialogComponent } from './product-dialog/product-dialog.component';
+import { ProductDetailDialogComponent } from './product-detail-dialog/product-detail-dialog.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ProductDialogComponent } from './product-dialog/product-dialog.componen
     RegisterComponent,
     MyDialogComponent,
     AlmacenComponent,
-    ProductDialogComponent
+    ProductDialogComponent,
+    ProductDetailDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +38,7 @@ import { ProductDialogComponent } from './product-dialog/product-dialog.componen
     MatCheckboxModule,
     NgbModule
   ],
-  entryComponents: [MyDialogComponent,ProductDialogComponent],
+  entryComponents: [MyDialogComponent,ProductDialogComponent,ProductDetailDialogComponent],
   providers: [CookieService],
   bootstrap: [AppComponent]
 })

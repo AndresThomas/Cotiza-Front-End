@@ -21,4 +21,6 @@ export class RequestServiceService {
 
   deleteProduct(id: number) { return this.http.delete(this.link + 'products/details/' + id + '/'); }
 
+  getProduct(id: number) { return this.http.get(this.link + 'products/details/' + id + '/'); }
+
 }

@@ -17,7 +17,7 @@
       <td>{{ productIterator.folio }}</td>
       <td>{{ productIterator.descripcion }}</td>
       <td class="tableHeader">${{ productIterator.costo }}</td>
-      <td class="tableHeader" mat-checkbox></td>
+      <td class="tableHeader"><input type="checkbox" name="" id="" (change)="addProduct($event,productIterator.id)" ></td>
     </tr>
   </table>
 
@@ -27,5 +27,5 @@
 <div mat-dialog-actions>
   <button class="btn btn-danger myBtn" [mat-dialog-close]="true">Cerrar</button>
   <button class="btn btn-primary myBtn" [mat-dialog-close]="true">Buscar</button>
-  <button class="btn btn-success myBtn" [mat-dialog-close]="true">Aceptar</button>
+  <button class="btn btn-success myBtn" [mat-dialog-close]="getProductList()">Aceptar</button>
 </div>

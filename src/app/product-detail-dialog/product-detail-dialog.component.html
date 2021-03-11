@@ -1,32 +1,28 @@
 <mat-dialog-actions>
   <div class="divClose">
-      <button class="btnClose" mat-button mat-dialog-close class="close" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-      </button>
+    <button class="btnClose" mat-button mat-dialog-close class="close" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
   </div>
   <mat-dialog-actions>
 
-<div class="container" mat-dialog-content>
-    <div class="title">
+    <div class="container" mat-dialog-content>
+      <div class="title">
         <h2>Detalles del producto</h2>
+      </div>
+      <div class="divForm">
+        <form>
+          <h3>Folio</h3>
+          <input type="text" value="{{data.folio}}">
+          <h3>Descripcion</h3>
+          <input type="text" value="{{data.descripcion}}">
+          <h3>Costo</h3>
+          <input type="number" value="{{data.costo}}">
+          <h3>Cantidad</h3>
+          <input type="number" value="{{data.cantidad}}">
+          <button class="btn btn-danger myBtn" (click)="deleteProduct(data.id)">Borrar</button>
+          <button class="btn btn-success myBtn" type="submit">Guardar</button>
+          <button class="btn btn-success myBtn">Aceptar</button>
+        </form>
+      </div>
     </div>
-    <table class="table">
-      <tr>
-        <th class="tableHeader">Cantidad disponible</th>
-        <th class="tableHeader">Folio</th>
-        <th class="tableHeader">Descripcion</th>
-        <th class="tableHeader">Precio Unitario</th>
-      </tr>
-      <tr>
-        <td class="tableHeader"><input type="number" class="in" value="{{ data.cantidad }}"></td>
-        <td><input type="text" value="{{ data.folio }}"></td>
-        <td><input type="text" value="{{ data.descripcion }}"></td>
-        <td class="tableHeader" >$<input type="number" class="in" value="{{ data.costo }}"></td>
-      </tr>
-    </table>
-  </div>
-  <div class="container" mat-dialog-actions>
-    <button class="btn btn-danger myBtn" (click)="deleteProduct(data.id)" >Borrar</button>
-    <button class="btn btn-success myBtn" >Aceptar</button>
-  </div>
-  

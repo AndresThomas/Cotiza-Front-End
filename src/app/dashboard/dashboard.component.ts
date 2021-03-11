@@ -15,6 +15,8 @@ import { RequestServiceService } from '../request-service.service';
 export class DashboardComponent implements OnInit {
 
   results: any ;
+  data:any;
+  products: any[]=[];
   name: string = localStorage.getItem("name") || "";
 
   constructor(
@@ -30,12 +32,15 @@ export class DashboardComponent implements OnInit {
     }
   }
 
+  deleteProduct(e:any,id:number){
+    
+  }
 
   extractData(){
     this.request.getProducts().subscribe(
       (results) => {
         this.results = results;
-        console.log(this.results);
+        //console.log(this.results);
       },
       (error)=>{
         console.log(error)
@@ -54,6 +59,19 @@ export class DashboardComponent implements OnInit {
     
     dialogRef.afterClosed().subscribe(result => {
       console.log(result);
+      this.data = result;
+      for (let i = 0; i < this.data.length; i++) {
+        
+          this.request.getProduct(this.data[i]).subscribe(
+            (product)=>{
+              this.products.push(product);
+            },(error)=>{
+              console.log(error);
+            }
+            );
+          
+      }
+      console.log(this.products,'-> products');
     })
   }
   ngOnInit(): void {

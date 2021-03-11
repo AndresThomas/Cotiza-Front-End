@@ -18,7 +18,8 @@ export class AlmacenComponent implements OnInit {
     private request: RequestServiceService,
     private cookieService: CookieService,
     private router: Router,
-  ) { }
+  ) {
+   }
 
   
 
@@ -31,7 +32,7 @@ export class AlmacenComponent implements OnInit {
 
   openProduct(product:any){
     const dialogRef = this.matDialog.open(ProductDetailDialogComponent,{
-      width: '40%',
+      width: '35%',
       height:'90%',
       data: product
     });

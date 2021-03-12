@@ -1,15 +1,11 @@
-@import url("https://fonts.googleapis.com/css?family=Numans");
-
 html,
 body {
   background-image: url("pexels-karolina-grabowska-5632402.jpg");
   background-size: cover;
-  background-repeat: no-repeat;
-  
+  background-repeat: no-repeat;  
   font-family: "Numans", sans-serif;
   margin: 0;
   padding: 0;
-  background-color: black;
 }
 .container {
   height: 90vh;
@@ -31,18 +27,9 @@ body {
   background-color: rgba(0, 0, 0, 0.5) !important;
 }
 
-.social_icon span {
-  font-size: 60px;
-  margin-left: 10px;
-  color: #ffc312;
-}
-.social_icon span:hover {
-  color: white;
-  cursor: pointer;
-}
 
 .text{
-    color:#656565;
+    color:white;
     width: 20%;
     height: 10%;
     margin-left: auto;
@@ -64,18 +51,6 @@ input:focus {
   outline: 0 0 0 0 !important;
   box-shadow: 0 0 0 0 !important;
 }
-
-.remember {
-  color: white;
-}
-
-.remember input {
-  width: 20px;
-  height: 20px;
-  margin-left: 15px;
-  margin-right: 5px;
-}
-
 .login_btn {
   color: black;
   background-color: #ffc312;

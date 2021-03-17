@@ -76,12 +76,12 @@
         <div class="card-body">
           <table class="table">
             <tr *ngFor='let productIterator of products'>
-              <td class="bodyT"><input type="number" id="cantidadP" value="1"
-                 (change)="total($event,productIterator.costo)" ></td>
+              <td class="bodyT number"><input type="number" min="1" id="cantidadP{{productIterator.id}}" value="1"
+                 (change)="total($event,productIterator.id,productIterator.costo)" ></td>
               <td class="bodyT">{{ productIterator.folio }}</td>
               <td class="bodyT">{{ productIterator.descripcion }}</td>
               <td class="bodyT">${{ productIterator.costo }}</td>
-              <td class="bodyT">{{totalPagar }}</td>
+              <td class="bodyT">${{productIterator.costo *productIterator.cantidad }}</td>
               <td class="bodyT"><input type="checkbox" name="" id="{{productIterator.id}}"
                   (change)="deleteProduct($event,productIterator.id)"></td>
             </tr>
@@ -95,7 +95,7 @@
           <div class="d-flex justify-content-center">
             <button type="button" class="btn btn-primary myBtn" (click)="openDialog()">Buscar</button>
             <button type="button" class="btn btn-danger myBtn"(click)="clean()">Vaciar</button>
-            <button type="button" class="btn btn-success myBtn ">Cotizar</button>
+            <button type="button" class="btn btn-success myBtn" (click)="cotizar()" >Cotizar</button>
           </div>
         </div>
       </div>

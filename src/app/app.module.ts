@@ -16,6 +16,7 @@ import { AlmacenComponent } from './almacen/almacen.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ProductDialogComponent } from './product-dialog/product-dialog.component';
 import { ProductDetailDialogComponent } from './product-detail-dialog/product-detail-dialog.component';
+import { CotizaDialogComponent } from './cotiza-dialog/cotiza-dialog.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { ProductDetailDialogComponent } from './product-detail-dialog/product-de
     MyDialogComponent,
     AlmacenComponent,
     ProductDialogComponent,
-    ProductDetailDialogComponent
+    ProductDetailDialogComponent,
+    CotizaDialogComponent
   ],
   imports: [
     BrowserModule,

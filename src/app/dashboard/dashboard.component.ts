@@ -3,7 +3,9 @@ import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { MatDialogRef } from "@angular/material/dialog";
 import { Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
+import { CotizaDialogComponent } from '../cotiza-dialog/cotiza-dialog.component';
 import { MyDialogComponent } from '../my-dialog/my-dialog.component';
+import { Product } from '../Product';
 import { RequestServiceService } from '../request-service.service';
 
 
@@ -16,8 +18,7 @@ export class DashboardComponent implements OnInit {
 
   results: any;
   data: any;
-  products: any[] = [];
-  totalPagar: number | undefined;
+  products: Product[] = [];
   name: string = localStorage.getItem("name") || "";
 
   constructor(
@@ -34,37 +35,36 @@ export class DashboardComponent implements OnInit {
   }
 
   deleteProduct(e: any, key: number) {
-    var productAux:any ;
-    var del:any;
+    var productAux: any;
+    var del: any;
     this.products.forEach(element => {
-    
-      if(element.id == key){
-        console.log(element.id,key);
-        console.log(this.products);
+
+      if (element.id == key) {
         del = this.products.indexOf(element);
         productAux = element;
-        this.products.splice(del,1);
+        this.products.splice(del, 1);
       }
     });
-    console.log(productAux,'aux, del', del );
-    
   }
 
-  clean(){
+  clean() {
     this.products = [];
   }
 
-  total(e: any, costo: number) {
-    var x = (<HTMLInputElement>document.getElementById('cantidadP')).value;
+  total(e: any, id: number, costo: number) {
+    var x = (<HTMLInputElement>document.getElementById('cantidadP' + id)).value;
     var y: number = +x;
-    this.totalPagar = costo * y;
+    this.products.forEach((product) => {
+      if (product.id == id) {
+        product.cantidad = y;
+      }
+    })
   }
 
   extractData() {
     this.request.getProducts().subscribe(
       (results) => {
         this.results = results;
-        //console.log(this.results);
       },
       (error) => {
         console.log(error)
@@ -72,6 +72,13 @@ export class DashboardComponent implements OnInit {
     )
   }
 
+  cotizar() {
+    const dialogRef = this.matDialog.open(CotizaDialogComponent, {
+      width: '70%',
+      height: '70%',
+      data: this.products
+    })
+  }
 
   openDialog() {
     this.extractData();
@@ -82,20 +89,18 @@ export class DashboardComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log(result);
-      this.data = result;
-      for (let i = 0; i < this.data.length; i++) {
-
-        this.request.getProduct(this.data[i]).subscribe(
-          (product) => {
-            this.products.push(product);
+      let data = result;
+      
+      for (let i = 0; i < data.length; i++) {
+        this.request.getProduct(data[i]).subscribe(
+          (result) => {
+            result.cantidad = 1;
+            this.products.push(result);
           }, (error) => {
             console.log(error);
           }
         );
-
       }
-      console.log(this.products, '-> products');
     })
   }
   ngOnInit(): void {

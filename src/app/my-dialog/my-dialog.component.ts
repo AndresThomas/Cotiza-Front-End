@@ -20,13 +20,11 @@ export class MyDialogComponent implements OnInit {
   }
 
   addProduct(e: any, id: number) {
-    if (e.target.checked) {
-      console.log(id + 'ok');
+    if (e.target.checked) {      
       this.productList.push(id);
     } else {
       this.productList = this.productList.filter(m => m != id);
     }
-    console.log(this.productList);
   }
 
   getProductList() {

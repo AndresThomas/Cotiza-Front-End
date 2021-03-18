@@ -73,11 +73,20 @@ export class DashboardComponent implements OnInit {
   }
 
   cotizar() {
-    const dialogRef = this.matDialog.open(CotizaDialogComponent, {
-      width: '70%',
-      height: '70%',
-      data: this.products
-    })
+    if(this.products.length > 0){
+      const dialogRef = this.matDialog.open(CotizaDialogComponent, {
+        width: '50%',
+        height: '80%',
+        data: this.products
+      })
+    }else{
+      //alert('Debe registrar productos antes de cotizar');
+      const dialogRef = this.matDialog.open(CotizaDialogComponent, {
+        width: '50%',
+        height: '80%',
+        data: this.products
+      })
+    }
   }
 
   openDialog() {
@@ -89,17 +98,19 @@ export class DashboardComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      let data = result;
-      
-      for (let i = 0; i < data.length; i++) {
-        this.request.getProduct(data[i]).subscribe(
-          (result) => {
-            result.cantidad = 1;
-            this.products.push(result);
-          }, (error) => {
-            console.log(error);
-          }
-        );
+
+      if (result.length > 0) {
+
+        for (let i = 0; i < result.length; i++) {
+          this.request.getProduct(result[i]).subscribe(
+            (result) => {
+              result.cantidad = 1;
+              this.products.push(result);
+            }, (error) => {
+              console.log(error);
+            }
+          );
+        }
       }
     })
   }

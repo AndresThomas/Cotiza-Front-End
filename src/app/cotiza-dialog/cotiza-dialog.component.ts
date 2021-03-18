@@ -9,6 +9,7 @@ import { Product } from '../Product';
 })
 export class CotizaDialogComponent implements OnInit {
   row:Product[];
+  cuenta:number = 0;
   constructor(
     public dialogref: MatDialogRef<CotizaDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: Product[],
@@ -17,11 +18,9 @@ export class CotizaDialogComponent implements OnInit {
   }
 
   showData(){
-    let total:number=0;
     this.row.forEach((product)=>{
-      total += (product.cantidad*product.costo);
+      this.cuenta += (product.cantidad*product.costo);
     })
-    console.log(total,'total pagar');
   }
   
 

@@ -1,1 +1,33 @@
-<p>cotiza-dialog works!</p>
+<div class="container">
+    <h2 mat-dialog-title>Buscar</h2>
+  </div>
+  <div class="listado" mat-dialog-content>
+    <table class="table">
+      <tr>
+        <th class="tableHeader">Cantidad</th>
+        <th class="tableHeader">Folio</th>
+        <th class="tableHeader">Costo</th>
+        <th class="tableHeader">Total</th>
+      </tr>
+  
+  
+      <tr *ngFor='let productIterator of data'>
+        <td class="tableHeader">{{ productIterator.cantidad }}</td>
+        <td>{{ productIterator.folio }}</td>
+        <td class="tableHeader">${{ productIterator.costo }}</td>
+        <td class="tableHeader">${{ productIterator.costo * productIterator.cantidad }}</td>
+        
+      </tr>
+      <tr>
+        <td colspan="4" class="cuenta" ><h4>Total a pagar ${{cuenta}}</h4></td>
+      </tr>
+    </table>
+  
+  
+  </div>
+  
+  <div mat-dialog-actions>
+    <button class="btn btn-danger myBtn" [mat-dialog-close]="true">Cerrar</button>
+    <button class="btn btn-primary myBtn" [mat-dialog-close]="true">Pagar</button>
+    
+  </div>

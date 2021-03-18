@@ -64,6 +64,11 @@ h3 {
   align-items: center;
 }
 
+.card-body{
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
 .bodyT {
   border: 1px solid #dddddd;
   padding: 5px;

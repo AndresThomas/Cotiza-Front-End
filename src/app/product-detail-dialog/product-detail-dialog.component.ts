@@ -1,6 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { Product } from '../Product';
 import { RequestServiceService } from '../request-service.service';
 
 @Component({
@@ -9,10 +10,10 @@ import { RequestServiceService } from '../request-service.service';
   styleUrls: ['./product-detail-dialog.component.css']
 })
 export class ProductDetailDialogComponent implements OnInit {
-  row;
+  row : Product;
   constructor(
     public dialogref: MatDialogRef<ProductDetailDialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: any,
+    @Inject(MAT_DIALOG_DATA) public data: Product,
     private request: RequestServiceService,
   ) {
     this.row = data;
@@ -39,15 +40,29 @@ export class ProductDetailDialogComponent implements OnInit {
       }
     );
   }
-
-  updateProduct(data:any){
+  updateProduct(){
+    var folio = (<HTMLInputElement>document.getElementById('folio')).value;
+    var descripcion = (<HTMLInputElement>document.getElementById('descripcion')).value;
+    var costo = (<HTMLInputElement>document.getElementById('costo')).value;
+    var x: number = +costo;
+    var cantidad = (<HTMLInputElement>document.getElementById('cantidad')).value;
+    var y: number = +cantidad;
     
-    console.log("i win?");
-    
-    
+    var product: Product = new Product(this.data.id,folio,descripcion,x,y);
+    this.request.updateProduct(product).subscribe(
+      (status)=>{
+        alert('Producto actualizado');
+      },(error)=>{
+        console.log(error);
+        alert('Hubo un error contacte al administrador, gracias');
+      }
+    );
   }
 
+  
+
   ngOnInit(): void {
+  
   }
 
 }

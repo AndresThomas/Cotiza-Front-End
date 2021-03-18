@@ -23,6 +23,8 @@ export class RequestServiceService {
 
   deleteProduct(id: number) { return this.http.delete(this.link + 'products/details/' + id + '/'); }
 
+  updateProduct(product: Product){ return this.http.put(this.link + 'products/details/' + product.id + '/',product)}
+
   getProduct(id: number):Observable<Product> { return this.http.get<Product>(this.link + 'products/details/' + id + '/'); }
 
 }

@@ -1,28 +1,47 @@
 .container {
+  background-color: black;
   margin-right: auto;
   margin-left: auto;
   text-align: center;
 }
-.divClose {
+.table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
   width: 100%;
 }
-
-.divForm {
-  text-align: left;
+td,th {
+  border: 1px solid #dddddd;
+  padding: 8px;
+  text-align: center;
 }
-input {
+.productsArea {
+  background-color: black;
+}
+
+.tableHeader {
+  text-align: center;
+  width: 10%;
+  height: 10%;
+}
+
+.listado {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: auto;
+  width: 100%;
+  height: 80%;
+  
+}
+input{
   width: 100%;
 }
-
+h3{
+  font-size: 200%;
+}
 .myBtn {
   margin-right: auto;
   margin-left: auto;
-  width: 25%;
-}
-
-.title {
-  background-color: black;
-  text-align: center;
+  width: 30%;
 }
 
 h2 {

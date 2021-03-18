@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
+import { Product } from '../Product';
 import { ProductDetailDialogComponent } from '../product-detail-dialog/product-detail-dialog.component';
 import { ProductDialogComponent } from '../product-dialog/product-dialog.component';
 import { RequestServiceService } from '../request-service.service';
@@ -30,7 +31,7 @@ export class AlmacenComponent implements OnInit {
     }
   }
 
-  openProduct(product:any){
+  openProduct(product:Product){
     const dialogRef = this.matDialog.open(ProductDetailDialogComponent,{
       width: '35%',
       height:'90%',

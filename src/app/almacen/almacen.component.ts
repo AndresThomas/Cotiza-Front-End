@@ -30,6 +30,10 @@ export class AlmacenComponent implements OnInit {
       this.router.navigate(["/"]);   
     }
   }
+  logOut(){
+    this.cookieService.delete('cookieLogin');
+    this.validation();
+  }
 
   openProduct(product:Product){
     const dialogRef = this.matDialog.open(ProductDetailDialogComponent,{

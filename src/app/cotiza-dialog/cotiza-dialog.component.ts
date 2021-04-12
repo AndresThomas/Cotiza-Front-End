@@ -26,6 +26,7 @@ export class CotizaDialogComponent implements OnInit {
   }
 
   pagar(){
+    // generad un pdf con la información guardada
     let id:number;
     let n: number;
     let aux: Product;

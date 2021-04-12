@@ -2,8 +2,10 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { MD5 } from 'crypto-js';
 import { CookieService } from 'ngx-cookie-service';
 import { RequestServiceService } from '../request-service.service';
+
 
 @Component({
   selector: 'app-login',
@@ -28,6 +30,8 @@ export class LoginComponent implements OnInit {
   name : string ="";
   message: string = "";
   onSubmit(data:any){
+    //data.password = MD5(data.password).toString(); investigar como decodificar en backend
+    console.log(data.password,'data')
     this.request.postLogin(data).subscribe(
       login => {
         this.login = login; //<- respuesta del backend

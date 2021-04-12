@@ -34,6 +34,11 @@ export class DashboardComponent implements OnInit {
     }
   }
 
+  logOut(){
+    this.cookieService.delete('cookieLogin');
+    this.validation();
+  }
+
   deleteProduct(e: any, key: number) {
     var productAux: any;
     var del: any;

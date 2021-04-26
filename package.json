@@ -32,6 +32,8 @@
     "jquery": "^3.6.0",
     "ngx-cookie-service": "^11.0.2",
     "path": "^0.12.7",
+    "pdfmake": "^0.1.71",
+    "pdfmake-wrapper": "^2.1.1",
     "rxjs": "~6.6.0",
     "save": "^2.4.0",
     "tslib": "^2.0.0",
@@ -45,6 +47,7 @@
     "@types/crypto-js": "^4.0.1",
     "@types/jasmine": "~3.6.0",
     "@types/node": "^12.11.1",
+    "@types/pdfmake": "^0.1.17",
     "codelyzer": "^6.0.0",
     "jasmine-core": "~3.6.0",
     "jasmine-spec-reporter": "~5.0.0",
@@ -57,9 +60,10 @@
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",
     "typescript": "~4.0.2"
-  },"browser": {
+  },
+  "browser": {
     "crypto": false
-},
+  },
   "engines": {
     "node": "12.18.4",
     "npm": "6.14.6"

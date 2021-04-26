@@ -28,7 +28,8 @@ import { CotizaDialogComponent } from './cotiza-dialog/cotiza-dialog.component';
     AlmacenComponent,
     ProductDialogComponent,
     ProductDetailDialogComponent,
-    CotizaDialogComponent
+    CotizaDialogComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -38,10 +39,11 @@ import { CotizaDialogComponent } from './cotiza-dialog/cotiza-dialog.component';
     BrowserAnimationsModule,
     MatDialogModule,
     MatCheckboxModule,
-    NgbModule
+    NgbModule,
+    
   ],
   entryComponents: [MyDialogComponent,ProductDialogComponent,ProductDetailDialogComponent],
-  providers: [CookieService],
+  providers: [CookieService,],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
